@@ -26,7 +26,7 @@ npm install
 
 The easiest way to use the Enigma machine is through the web interface:
 
-**Live Demo:** https://developersandbox.xyz/enigma/
+**Live Demo:** <https://developersandbox.xyz/enigma/>
 
 Or run locally:
 
@@ -37,6 +37,7 @@ node server.js
 Then open your browser to `http://localhost:4000`
 
 The web interface provides:
+
 - Visual Enigma machine with authentic appearance
 - Interactive keyboard and lampboard
 - Real-time rotor position display
@@ -57,9 +58,9 @@ are available:
 - `process <message>`: Encrypts the given message.
 - `settings`: Displays the current machine settings (rotors, plugboard, etc.).
 - `load [filename]`: Loads machine settings from a file. Defaults to
-`./data/machineSettings.enigma`.
+  `./data/machineSettings.enigma`.
 - `save [filename]`: Saves the current machine settings to a file. Defaults
-to `user_settings/enigma_settings.enigma`.
+  to `user_settings/enigma_settings.enigma`.
 - `exit`, `quit`, `bye`: Exits the application.
 
 ## Components
@@ -90,7 +91,7 @@ mathematical equations behind its operation, please refer to the
 
 The server also provides a REST API for programmatic access to the Enigma machine.
 
-#### `POST /process`
+### `POST /process`
 
 Processes a message using the Enigma machine with the provided settings.
 
@@ -126,7 +127,9 @@ Processes a message using the Enigma machine with the provided settings.
 
 ```bash
 curl -X POST -H "Content-Type: application/json" \
--d '{"settings":{"plugboard":["AZ","BY"],"rotors":[{"name":"I","ring":0,"position":0},{"name":"II","ring":0,"position":0},{"name":"III","ring":0,"position":0}],"reflector":"UKW-B"},"message":"HELLOWORLD"}' \
+-d '{"settings":{"plugboard":["AZ","BY"],"rotors":[{"name":"I","ring":0,"position":0},{"name":
+"II","ring":0,"position":0},{"name":"III","ring":0,"position":0}],"reflector":"UKW-B"},
+"message":"HELLOWORLD"}' \
 http://localhost:4000/process
 ```
 
@@ -137,7 +140,6 @@ The project includes comprehensive tests using Jest. Run the tests with:
 ```bash
 npm test
 ```
-
 
 ## Historical Note
 
